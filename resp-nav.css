@@ -1,0 +1,47 @@
+/* For making navigation bar responsive */
+
+@media (max-width:1125px) {
+    .nav ul{
+        left:-100%;
+        position:fixed;
+        top:100px;
+        height:100vh;
+        transition: .5s ease-in-out;
+        background-color:rgb(177 218 135);
+        /* FOR CENTERING A LIST-ITEMS USE WIDTH:100% ALONG WITH TEXT-ALIGN :CENTER ---> WILL CENTER OUT LIST IN PAGE  */
+        width:100%;  
+        text-align:center;
+    }
+    .nav ul li{
+        display:block;
+        line-height:85px;
+    }
+    #check-btn{
+        display:block;
+        font-size:2.5em;
+        float:right;
+        padding:0px 10px;
+    }
+    /* HERE LIST INSIDE LIST FUNDA STARTS */
+    .nav ul li ul{
+        position:static;
+        /* pointer-events:auto; */
+        height:auto;
+        background-color:rgb(87, 194, 158);
+    }
+    .nav ul li ul li{
+        z-index: 1;
+        line-height: 50px;
+        visibility: visible;
+    }
+}
+
+#check-btn-box:checked ~ ul{
+    left:0%;
+}
+
+#check-btn-box:checked ~ #check-btn i:before{
+    content:"\f00d";
+    padding:0px 6px;
+    /* FOR PLACING X-MARK IN PLACE OF BARS AT RIGHT CORNER IN NAVIGATION BAR */
+}
